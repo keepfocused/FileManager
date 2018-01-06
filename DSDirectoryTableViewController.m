@@ -57,7 +57,11 @@
     self.navigationItem.title = [self.path lastPathComponent];
     
     if (!self.path) {
-        self.path = @"/Users/Danil/Documents/TestDirectory";
+        NSBundle* mainBundle;
+        // Get the main bundle for the app.
+        mainBundle = [NSBundle mainBundle];
+        
+        self.path = mainBundle.bundlePath;
     }
     
     
